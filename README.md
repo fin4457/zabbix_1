@@ -82,29 +82,36 @@
 2. Добавим Zabbix Server в список разрешенных серверов ваших Zabbix Agentов.
    sudo nano /etc/zabbix/zabbix-agent2.conf
    найдем строку Server= и введем адрес нашего сервера Zabbix
-3. Стартуем агента и добавляем в автозагрузку
+
+   ```
+   sudo sed -i 's/Server=127.0.0.1/Server=192.168.1.221/g' /etc/zabbix/zabbix_agent2.conf
+   ```
+4. Стартуем агента и добавляем в автозагрузку
    ```
    systemctl restart zabbix-agent2
    systemctl enable zabbix-agent2
    ```
-5. Добавьте Zabbix Agentов в раздел Configuration > Hosts вашего Zabbix Servera.
-6. Проверьте, что в разделе Latest Data начали появляться данные с добавленных агентов.
+5. Добавим Zabbix Agentов в раздел Data collection > Hosts вашего Zabbix Servera.
+6. Проверим, что в разделе Latest Data начали появляться данные с добавленных агентов.
 
-#### Требования к результатам
+
 1. Скриншот раздела Data collection > Hosts
-   ![alt text](https://github.com/fin4457/zabbix_1/blob/main/img/zabbix.jpg)
-3. Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером
-   ![alt text](https://github.com/fin4457/zabbix_1/blob/main/img/zabbix.jpg)
-5. Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
-   ![alt text](https://github.com/fin4457/zabbix_1/blob/main/img/zabbix.jpg)
-7. Приложите в файл README.md текст использованных команд в GitHub
+   ![alt text](https://github.com/fin4457/zabbix_1/blob/main/img/hosts.jpg)
+2. Cкриншот лога zabbix agent, где видно, что он работает с сервером
+   ![alt text](https://github.com/fin4457/zabbix_1/blob/main/img/log.jpg)
+3. Скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
+   ![alt text](https://github.com/fin4457/zabbix_1/blob/main/img/zabbix server.jpg)
+   ![alt text](https://github.com/fin4457/zabbix_1/blob/main/img/test machine.jpg)
+
 
 ---
 ## Задание 3 со звёздочкой*
-Установите Zabbix Agent на Windows (компьютер) и подключите его к серверу Zabbix.
+Установим Zabbix Agent на Windows (компьютер) и подключим его к серверу Zabbix.
 
-#### Требования к результатам
-1. Приложите в файл README.md скриншот раздела Latest Data, где видно свободное место на диске C:
+
+Скриншот раздела Latest Data, где видно свободное место на диске C:
+![alt text](https://github.com/fin4457/zabbix_1/blob/main/img/windows.jpg)
+
 --- 
 
 ## Критерии оценки
