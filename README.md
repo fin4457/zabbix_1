@@ -93,7 +93,7 @@
    systemctl restart zabbix-agent2
    systemctl enable zabbix-agent2
    ```
-5. Добавим Zabbix Agentов в раздел Data collection > Hosts вашего Zabbix Servera.
+5. Добавим Zabbix Agentов в раздел Data collection > Hosts нашего Zabbix Server.
 6. Проверим, что в разделе Latest Data начали появляться данные с добавленных агентов.
 
 
